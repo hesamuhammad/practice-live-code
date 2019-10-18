@@ -61,6 +61,9 @@
 
 function matrixGenerator(str) {
   // Write your code here
+  for (var i = 0; i < str.length; i++){
+    
+  }
 }
 
 console.log(matrixGenerator('abcdefgh'))

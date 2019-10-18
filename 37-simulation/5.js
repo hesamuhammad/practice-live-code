@@ -28,6 +28,35 @@
 
 function belanja(modal) {
   // Write your code here
+  var obj = {
+  }
+  var belanja = {}
+  var point = 0
+  var totalBelanjaan = 0
+  var shopList = [
+    ['Kompor', 1000000, 100],
+    ['Daging Sapi', 300000, 95],
+    ['Bantal', 25000, 50],
+    ['Shampoo', 20000, 40],
+    ['Sabun', 10000, 20]
+  ]
+
+  for (var i = 0; i < shopList.length; i++){
+    for (var j = 0; j < shopList[i].length; j++){
+      if (modal >= shopList[i][1]){
+        modal -= shopList[i][1];
+        totalBelanjaan += shopList[i][1]
+        belanja += shopList[i][0];
+        point += shopList[i][2];
+        
+        
+      }
+    }
+    obj['belanja'] = belanja;
+    obj['poin'] = point;
+    obj['kembalian'] = modal - totalBelanjaan;
+  }
+  return obj;
 }
 
 console.log(belanja(100000))

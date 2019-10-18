@@ -26,6 +26,19 @@
 
 function slice(data, index) {
   // Write your code here
+  var result = [];
+  var start = index[0]
+  var end = index[1]
+  for (var i = 0; i < data.length; i++){
+    if (start === undefined && end === undefined){
+      result.push(data[i])
+    } else if (end === undefined){
+      result.push(data[i])
+    } else {
+      result.push(data[i])
+    }
+  }
+  return result
 }
 
 //DRIVER CODE
