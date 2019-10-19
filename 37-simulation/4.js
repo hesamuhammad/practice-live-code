@@ -27,21 +27,21 @@
 
 function countryCollection(countries) {
   // you can only write your code here!
-  var result = []
+  let result = [];
+  let tmp = {};
   for (var i = 0; i < countries.length; i++){
-    for (var j = 0; j < countries[i].length; j++){
-      if (countries[i][1] === 'Amerika'){
-        result.push(countries[i][0]);
-      } else if (countries[i][1] === 'Asia'){
-        result.push(countries[i][0]);
-      } else if (countries[i][1] === 'Eropa'){
-        result.push(countries[i][0]);
-      } else if (countries[i][1] === 'Afrika'){
-        result.push(countries[i][0]);
-      } 
+    if (tmp [countries[i][1]] === undefined){
+      tmp[countries[i][1]] = [countries[i][0]];
+    } else {
+      tmp[countries[i][1]].push(countries[i][0])
     }
   }
-  return result
+  
+  for (keys in tmp){
+    tmp[keys].unshift(keys);
+    result.push(tmp[keys]);
+  }
+  return result;
 }
 
 console.log(countryCollection([["Barbados", 'Amerika'], ["Oman", 'Asia'], ["Gibraltar", "Eropa"], ["Malaysia", "Asia"], ["Suriname", "Amerika"], ["Mayotte", "Afrika"], ["Turkmenistan", "Asia"], ["Austria", "Eropa"], ["Somalia", "Afrika"]]))

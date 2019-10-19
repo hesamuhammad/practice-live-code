@@ -29,13 +29,18 @@ function slice(data, index) {
   var result = [];
   var start = index[0]
   var end = index[1]
-  for (var i = 0; i < data.length; i++){
-    if (start === undefined && end === undefined){
-      result.push(data[i])
-    } else if (end === undefined){
-      result.push(data[i])
-    } else {
-      result.push(data[i])
+  
+  if (start === undefined && end === undefined){
+    result = data;
+  } else if (start > data.length){
+    result = [];
+  } else if (end){
+    for (var i = start; i < end; i++){
+      result.push(data[i]);
+    }
+  } else {
+    for (var i = start; i < data.length; i++){
+      result.push(data[i]);
     }
   }
   return result

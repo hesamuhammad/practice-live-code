@@ -25,15 +25,15 @@
 function countCharRecursive(words, query) {
   // Write your code here
   let result = 0
-  if (query === words) {
-    result + 1
+  if (words.length === 0) {
+    return result
+  } else {
+    var deleteWords = words.slice(1)
+    if (words[0].includes(query) === true){
+      result++
+    }
+    return result += countCharRecursive(deleteWords, query)
   }
-
-  // Base Case
-  if (words.length === 1) return result
-
-  // Recursive
-  return result + countCharRecursive()
 }
 
 console.log(countCharRecursive(['Anchor', 'classic', 'daring', 'eager', 'fearless'], 'ar')); // 2

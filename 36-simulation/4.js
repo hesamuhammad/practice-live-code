@@ -25,10 +25,8 @@ function countryCollection(countries) {
       temp[countries[i][0]].push(countries[i]);
     }
   }
+console.log(temp)
   for (keys in temp) {
-    temp[keys].push(temp[keys].length);
-    temp[keys].unshift(keys);
-    result.push(temp[keys]);
   }
   return result;
 }
@@ -44,7 +42,7 @@ console.log(countryCollection(["Barbados", "Oman", "Gibraltar", "Malaysia", "Sur
 //   [ 'A', 'Austria', 1 ] 
 // ]
 
-console.log(countryCollection(["Bhutan", "Comoros", "Botswana", "Iceland", "Lesotho", "Liechtenstein", "Malawi", "Algeria", "Azerbaijan", "Indonesia", "Andorra", "Armenia"]))
+// console.log(countryCollection(["Bhutan", "Comoros", "Botswana", "Iceland", "Lesotho", "Liechtenstein", "Malawi", "Algeria", "Azerbaijan", "Indonesia", "Andorra", "Armenia"]))
 // [
 //   [ 'B', 'Bhutan', 'Botswana', 2 ],
 //   [ 'C', 'Comoros', 1 ],

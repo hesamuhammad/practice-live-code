@@ -25,12 +25,26 @@
  * maka output adalah [ 2, 3, 5, 7 ]
  */
 
+function primenumber(angka){
+  var result = true;
+  if (angka < 2){
+    result = false
+  }
+  for (let i = 2; i < angka; i++){
+    if (angka % i === 0){
+      result = false
+    }
+  }
+  return result
+}
+
 function prime(num) {
   // your code here
   var result = [];
-  for (var i = 2; i < num; i++) {
-    if (num % i === 0){
-      result.push(num[i]);
+  for (var i = 0; i <= num; i++) {
+    var myPrime = primenumber(i)
+    if (myPrime === true){
+      result.push(i);
     }
   }
   return result

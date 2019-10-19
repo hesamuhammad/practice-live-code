@@ -54,16 +54,29 @@
  *  [ '3', '2', '7', '4', 't', '0' ]
  * ]
  *
- * [Rules]
+ * [Rules] 
  * 1. `Hanya boleh` menggunakan built-in function .push() dan .unshift()
- * 2. Diperbolehkan menggunakan built-in function Math
+ * 2. Diperbolehkan menggunakan built-in function Math 
  */
 
 function matrixGenerator(str) {
   // Write your code here
-  for (var i = 0; i < str.length; i++){
-    
+  var wadah = Math.ceil(Math.sqrt(str.length));
+  var result = [];
+  var count = str.length - 1;
+  for (var i = 0; i < wadah; i++){
+    var tmp = [];
+    for (var j = 0; j < wadah; j++){
+      if(str[count] === undefined){
+        tmp.unshift('*');
+      } else {
+        tmp.unshift(str[count]);
+        count--
+      }
+    }
+    result.unshift(tmp)
   }
+  return result;
 }
 
 console.log(matrixGenerator('abcdefgh'))

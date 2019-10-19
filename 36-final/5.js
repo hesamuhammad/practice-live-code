@@ -36,6 +36,7 @@ Data yang diharapkan merupakan perhitungan tagihan pengiriman dengan ketentuan:
 
 function ongkosKirim(pengirim) {
   //your code here
+  
 
 }
 

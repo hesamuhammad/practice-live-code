@@ -28,35 +28,37 @@
 
 function belanja(modal) {
   // Write your code here
-  var obj = {
-  }
-  var belanja = {}
-  var point = 0
-  var totalBelanjaan = 0
+  var result = {
+    belanja: {},
+    poin: 0,
+    kembalian: 0
+  };
+  
   var shopList = [
-    ['Kompor', 1000000, 100],
-    ['Daging Sapi', 300000, 95],
-    ['Bantal', 25000, 50],
-    ['Shampoo', 20000, 40],
-    ['Sabun', 10000, 20]
+    { name: 'Kompor', price: 1000000, poin: 100},
+    { name: 'Daging Sapi', price: 300000, poin: 95},
+    { name: 'Bantal', price: 25000, poin: 50},
+    { name: 'Shampoo', price: 20000, poin: 40},
+    { name: 'Sabun', price: 10000, poin: 20}
   ]
 
   for (var i = 0; i < shopList.length; i++){
-    for (var j = 0; j < shopList[i].length; j++){
-      if (modal >= shopList[i][1]){
-        modal -= shopList[i][1];
-        totalBelanjaan += shopList[i][1]
-        belanja += shopList[i][0];
-        point += shopList[i][2];
-        
-        
+    while (modal >= shopList[i].price){
+      if (modal >= shopList[i].price){
+        modal -= shopList[i].price
+        if (result.belanja[shopList[i].name] === undefined){
+          result.belanja[shopList[i].name] = 1;
+          result.kembalian = modal;
+          result.poin += shopList[i].poin;
+        } else {
+          result.belanja[shopList[i].name] += 1;
+          result.kembalian = modal;
+          result.poin += shopList[i].poin;
+        }
       }
     }
-    obj['belanja'] = belanja;
-    obj['poin'] = point;
-    obj['kembalian'] = modal - totalBelanjaan;
   }
-  return obj;
+  return result;
 }
 
 console.log(belanja(100000))
