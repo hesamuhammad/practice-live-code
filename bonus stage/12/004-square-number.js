@@ -35,7 +35,10 @@ NOTE & RULES:
 **/
 
 
-function squareNumber(num) {}
+function squareNumber(num) {
+  var hasil = [];
+  
+}
 
 console.log(squareNumber(3));
 // [ [ 1, 2, 3 ], [ 6, 5, 4 ], [ 7, 8, 9 ] ]

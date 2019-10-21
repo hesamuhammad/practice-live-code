@@ -51,7 +51,21 @@ STORE "result" with the value of empty Array
 
 */
 
-function digitsGrouper(numbers) {}
+function digitsGrouper(numbers) {
+  var result = [[], [], [], []];
+  for (var i = 0; i < numbers.length; i++){
+    if (numbers[i] < 10){
+      result[0].push(numbers[i]);
+    } else if (numbers[i] < 100){
+      result[1].push(numbers[i]);
+    } else if (numbers[i] < 1000){
+      result[2].push(numbers[i]);
+    } else {
+      result[3].push(numbers[i]);
+    }
+  }
+  return result;
+}
 
 
 console.log(digitsGrouper([1, 12, 13, 0, 88, 123, 456])); // [ [ 1, 0 ], [ 12, 13, 88 ], [ 123, 456 ], [] ]

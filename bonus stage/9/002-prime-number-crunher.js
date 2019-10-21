@@ -54,7 +54,44 @@ RULES
 
 */
 
-function numberPrimeCruncher(input) {}
+function numberPrimeCruncher(input) {
+    var result = true;
+    if (angka < 2){
+        result = false
+    } 
+    for (var i = 2; i < angka; i++){
+        if (angka % i === 0){
+            result = false
+        }
+    }
+    return result
+}
+
+function numberPrimeCruncher(num){
+    var result = []
+    var primeNum = []
+    for (var i = 0; i <= num; i++) {
+        var myPrime = primenumber(i)
+        if (myPrime === true){
+          primeNum.push(i);
+        }
+    }
+
+    var total = 0
+    for (var j = 0; j < primeNum.length; j++){
+      total += primeNum[j];
+    }
+    
+    var avgPrime = total / primeNum.length;
+    for (var k = 0; k < primeNum.length; k++){
+      if (primeNum[k] > avgPrime) result.push(primeNum[k])
+    }
+
+    if (num <= 2){
+      result = [];
+    }
+    return result
+}
 
 
 console.log(numberPrimeCruncher(10)); // [ 5, 7 ]

@@ -33,7 +33,27 @@
       FOR LOOP index 0 to length of "code"
 
 */
-function encrypt(input) {}
+function encrypt(input) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var code = "!@#$%^&*()-+1234567890[]{}"
+  var str = '';
+
+  for (var i = 0; i < input.length; i++){
+    var same = false;
+    for (var j = 0; j < alphabet.length; j++){
+      if (input[i] === alphabet[j]){
+        same = true;
+        break;
+      }
+    }
+    if(same === true){
+      str += code[j]
+    } else {
+      str += input[i]
+    }
+  }
+  return str
+}
 
 
 console.log(encrypt('dimitri')) // $(1(86(
@@ -41,21 +61,6 @@ console.log(encrypt('irsyah mardiah')) //(67{!* 1!6$(!*
 console.log(encrypt('dimitr€€')) // $(1(86€€
 console.log(encrypt('d!mas')) // $!1!7
 console.log(encrypt('@wtian')) // @[8(!2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // function encrypt(input) {
 

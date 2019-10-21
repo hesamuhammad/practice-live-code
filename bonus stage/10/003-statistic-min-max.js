@@ -19,7 +19,37 @@ rules:
 1. tidak boleh menggunakan Math.max, Math.min, .map, .sort, .reduce, .filter
 */
 
-function statistik(kata, arr1, arr2) {}
+function statistik(kata, arr1, arr2) {
+    if (kata === 'min'){
+        var min1 = arr1[0];
+        var min2 = arr2[0];
+        for (var i = 0; i < arr1.length; i++){
+            if (min1 > arr1[i])
+            min1 = arr1[i]
+        }
+
+        for (var j = 0; j < arr2.length; j++){
+            if (min2 > arr2[j])
+            min2 = arr2[j]
+        }
+        return min1 + ' ' + min2
+
+    } else if (kata === 'max'){
+        var max1 = arr1[0];
+        var max2 = arr2[0];
+        for (var k = 0; k < arr1.length; k++){
+            if (max1 < arr1[k])
+            max1 = arr1[k]
+        }
+
+        for (var l = 0; l < arr2.length; l++){
+            if (max2 < arr2[l])
+            max2 = arr2[l]
+        }
+        return max1 + ' ' + max2
+
+    }
+}
 
 
 console.log(statistik('min', [1, 1, 1] , [8, 15, 17, 9]));             // 1 8
@@ -29,20 +59,6 @@ console.log(statistik('max', [6, 2, 4, 10, 8, 2] , [6, 5, 13, 23]));     // 10 2
 console.log(statistik('min', [5, 11, 18, 6], [3, 1, 8, 13]));          // 5 1
 
 // 7 minutes 35 sec
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

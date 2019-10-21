@@ -20,7 +20,27 @@ yang tipe data-nya berupa String.
 
 */
 
-function miniSudokuBoard (text) {}
+function miniSudokuBoard (text) {
+    if (!text){
+        return 'Empty board'
+    } else if(text.length < 9){
+        return 'Invalid input'
+    }
+
+    var result = [];
+    var count = 0;
+
+    for (var i = 0; i < 3; i++){
+        result.push([]);
+        for (var j = 0; j < text.length; j++){
+            if(j % 3 === 0){
+                result[i].push(text[count]);
+                count++
+            }
+        }
+    }
+    return result;
+}
 
 
 console.log(miniSudokuBoard('005030081'));
@@ -59,7 +79,7 @@ console.log(miniSudokuBoard(''));
 //     // console.log(i)
 //     result.push([])
 //     for(var j = 0; j < text.length; j++){
-//       if(j%3 === 0){
+//       if(j % 3 === 0){
 //         result[i].push(text[counter])
 //         counter++
 //       }

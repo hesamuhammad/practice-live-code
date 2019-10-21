@@ -34,7 +34,7 @@ function formatUang(number) {
   var str = ""
   for(var i = 0; i < strNum.length; i++){
     // console.log(strNum[i])
-    if(strNum.length%3 === 0){
+    if(strNum.length % 3 === 0){
       str += "." + strNum[i]
     }
   }

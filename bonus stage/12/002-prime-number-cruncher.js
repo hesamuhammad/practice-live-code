@@ -51,8 +51,6 @@ RULES
  - DILARANG MENGGUNAKAN BUILT-IN FUNCTION JS APAPUN SELAIN .push 
 
 */
-
-
 function primenumber(angka) {
     var result = true;
     if (angka < 2){
@@ -68,7 +66,6 @@ function primenumber(angka) {
 
 function numberPrimeCruncher(num){
     var result = []
-    var after = []
     var primeNum = []
     for (var i = 0; i <= num; i++) {
         var myPrime = primenumber(i)
@@ -77,22 +74,17 @@ function numberPrimeCruncher(num){
         }
     }
 
-    // console.log('ini adalah primeNum ' + primeNum)
     var total = 0
     for (var j = 0; j < primeNum.length; j++){
       total += primeNum[j];
     }
-    // console.log('ini adalah total ' + total)
+    
     var avgPrime = total / primeNum.length;
-    // console.log('ini adalah avgPrime ' + avgPrime)
-
     for (var k = 0; k < primeNum.length; k++){
       if (primeNum[k] > avgPrime) result.push(primeNum[k])
     }
 
-    if (num >= 2){
-      result.push(primeNum[k])
-    } else {
+    if (num <= 2){
       result = [];
     }
     return result

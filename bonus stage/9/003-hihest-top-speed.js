@@ -25,7 +25,21 @@ Contoh input dan output bisa kamu lihat di test case
 - DILARANG menggunakan built-in function .indexOf
 */
 
-function highestTopSpeed (data) {}
+function highestTopSpeed (data) {
+    var str = data.split(',');
+
+    if (data.length === 0){
+        return 'No data'
+    } else {
+        var newData = data.match(/\d+/g);
+        var max = 0
+        for (var i = 0; i < newData.length; i++){
+            var numbers = newData[i];
+            if(numbers > max) max = numbers;
+        }
+    }
+    return max
+}
 
 
 console.log(highestTopSpeed('Nakazato:140 km/h,Ryosuke:180 km/h,Iketani:110 km/h'));

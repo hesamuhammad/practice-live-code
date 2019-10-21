@@ -16,14 +16,47 @@ JIKA INPUT KALIMAT = 'HAHAHA PAYAH LOOO' dan INPUT SENSOR = 'PAYAH'
 MAKA OUTPUT = 'HAHAHA ***** LOOO'
 
 PSEUDOCODE :
-STORE "temp" with the value of empty Array
+STORE "tmp" with the value of empty Array
 STORE "str" with the value of splitted sentence
 
   FOR LOOP index 0 to length of sentence
                     
 */
 
-function sensorSentence ( sentence, words ) {}
+function sensorSentence ( sentence, words ) {
+
+    var tmp = [];
+    var str = "";
+  
+    for(var i = 0; i < sentence.length; i++){
+      // console.log(sentence[i])
+      if(sentence[i] === " "){
+        tmp.push(str);
+        str = "";
+      } else {
+        str += sentence[i]
+      }
+    }
+    tmp.push(str)
+  
+    // console.log(tmp)
+    var sensor = "";
+    for(var j = 0; j < words.length; j++){
+      sensor += "*";
+    }
+    // return sensor
+    var result = "";
+    for(var k = 0; k < tmp.length; k++){
+      if(tmp[k] === words){
+        tmp[k] = sensor
+      }
+    }
+  
+    for(var a = 0; a < tmp.length; a++){
+      result += tmp[a] + " "
+    }
+    return result
+  }
 
 
 
@@ -39,44 +72,4 @@ function sensorSentence ( sentence, words ) {}
 
   console.log(sensorSentence('', '')) // ''
 
-
-
-
-
-
-
-
-  // function sensorSentence ( sentence, words ) {
-
-  //   var temp = [];
-  //   var str = "";
   
-  //   for(var i = 0; i < sentence.length; i++){
-  //     // console.log(sentence[i])
-  //     if(sentence[i] === " "){
-  //       temp.push(str);
-  //       str = "";
-  //     } else {
-  //       str += sentence[i]
-  //     }
-  //   }
-  //   temp.push(str)
-  
-  //   // console.log(temp)
-  //   var sensor = "";
-  //   for(var j = 0; j < words.length; j++){
-  //     sensor += "*";
-  //   }
-  //   // return sensor
-  //   var result = "";
-  //   for(var k = 0; k < temp.length; k++){
-  //     if(temp[k] === words){
-  //       temp[k] = sensor
-  //     }
-  //   }
-  
-  //   for(var a = 0; a < temp.length; a++){
-  //     result += temp[a] + " "
-  //   }
-  //   return result
-  // }

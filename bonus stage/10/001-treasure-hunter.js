@@ -34,7 +34,28 @@ output: 3
     DISPLAY "countTreasure"
 */
 
-function treasureHunt(str) {}
+function treasureHunt(str) {
+  var count = 0;
+  var treasure = ['!', 
+  '@', 
+  '#', 
+  '$', 
+  '%', 
+  '^', 
+  '&', 
+  '*', 
+  '(', 
+  ')']
+
+  for (var i = 0; i < str.length; i++){
+    for (var j = 0; j < treasure.length; j++){
+      if (str[i] === treasure[j]){
+        count++
+      }
+    }
+  }
+  return count
+}
 
 
 console.log(treasureHunt("alskdj*lakjsd761^%")); // 3

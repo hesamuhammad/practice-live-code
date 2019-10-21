@@ -35,36 +35,6 @@ console.log(missingNumbers([60, 54, 50])); // [51, 52, 53, 55, 56, 57, 58, 59]
 console.log(missingNumbers([])); // []
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function missingNumbers (numbers) {
 
 //   // console.log(numbers)

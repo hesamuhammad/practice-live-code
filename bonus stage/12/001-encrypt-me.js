@@ -34,67 +34,26 @@
 
 */
 
-function encrypt(input){
-  var kamus = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z'
-  ];
-  var H8BI = [
-    '!',
-    '@',
-    '#',
-    '$',
-    '%',
-    '^',
-    '&',
-    '*',
-    '(',
-    ')',
-    '-',
-    '+',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '0',
-    '[',
-    ']',
-    '{',
-    '}'
-  ];
+function encrypt(input) {
+  var kamus = "abcdefghijklmnopqrstuvwxyz";
+  var H8BI = "!@#$%^&*()-+1234567890[]{}"
+  var str = '';
 
   for (var i = 0; i < input.length; i++){
-    if(input[i] === 'a') 
+    var same = false;
+    for (var j = 0; j < kamus.length; j++){
+      if (input[i] === kamus[j]){
+        same = true;
+        break;
+      }
+    }
+    if(same === true){
+      str += H8BI[j]
+    } else {
+      str += input[i]
+    }
   }
+  return str
 }
 
 

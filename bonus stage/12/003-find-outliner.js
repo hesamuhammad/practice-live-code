@@ -58,24 +58,34 @@ end of sequence
 
 */
 
-function findOutlier(array) {}
+function findOutlier(arr) {
+  var ganjil = [];
+  var genap = [];
 
+  if (arr === undefined) {
+    return 'no number'
+  } else { 
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i] % 2 === 0){
+        genap.push(arr[i])
+      } else {
+        ganjil.push(arr[i])
+      }
+    }
+  }
+
+  if (genap.length === 1){
+    return genap[0]
+  } else if (ganjil.length === 1){
+    return ganjil[0]
+  }
+}
 
 console.log(findOutlier([2, 4, 6, 100, 4, 11, 8, 50])); // 11
 
 console.log(findOutlier([160, 3, 1719, 19, 11, 13, 21])); // 160
 
 console.log(findOutlier([])) // 'no number'
-
-
-
-
-
-
-
-
-
-
 
 
 // function findOutlier(array) {

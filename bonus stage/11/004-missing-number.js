@@ -24,6 +24,10 @@ PADA MASING-MASING TEST CASE SUDAH TERDAPAT RANGE TERBESAR DAN TERKECIL
 
 function missingNum ( arr ) {
   // Your code here
+  var result = [];
+  for (var i = 0; i < arr.length; i++){
+    
+  }
 }
 
 
