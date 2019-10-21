@@ -38,7 +38,18 @@ RULE:
   RETURN TOTAL BARANG
 */
 
-function howManyGifts(maxBudget, gifts){}
+function howManyGifts(maxBudget, gifts){
+  var sortedGifts = gifts.sort();
+  
+  var count = 0;
+  for (var i = 0; i < sortedGifts.length; i++){
+    if (sortedGifts[i] <= maxBudget){
+      maxBudget -= sortedGifts[i]
+      count ++
+    }
+  }
+  return count
+}
 
 
 console.log(howManyGifts(30000, [15000, 12000, 5000, 3000, 10000])); // 4

@@ -25,27 +25,48 @@ output: ['dont', 'know', 'what', 'have', 'lose']
 
 function averageLengthWord(words) {
 
-  var str = words.split(" ");
-  var divisor = str.length;
+  var result = []
+  var str = words.split(' ');
+  var divider = str.length;
   var countWords = 0;
-  for(var i = 0; i < str.length; i++){
-    // console.log(str[i])
-    for(var j = 0; j < str[i].length; j++){
+
+  for (var i = 0; i < str.length; i++){
+    for (var j = 0; j < str[i].length; j++){
       countWords++
     }
   }
-  // console.log(countWords)
-  var result  = [];
-  var average = Math.round(countWords/divisor);
-  // console.log(average)
-  for(var k = 0; k < str.length; k++){
-    if(str[k].length === average){
+
+  var average = Math.round(countWords / divider);
+  for (var k = 0; k < str.length; k++){
+    if (str[k].length === average){
       result.push(str[k])
     }
   }
-  return result
+  return result;
 }
 
 console.log(averageLengthWord('Do you want to become a great coder ?')); // ['you']
 console.log(averageLengthWord('You dont know what you have until you lose it!')); // [ 'dont','know','what','have','lose']
 console.log(averageLengthWord('I am diligent')); // []
+
+
+
+// var str = words.split(" ");
+  // var divisor = str.length;
+  // var countWords = 0;
+  // for(var i = 0; i < str.length; i++){
+  //   // console.log(str[i])
+  //   for(var j = 0; j < str[i].length; j++){
+  //     countWords++
+  //   }
+  // }
+  // // console.log(countWords)
+  // var result  = [];
+  // var average = Math.round(countWords/divisor);
+  // // console.log(average)
+  // for(var k = 0; k < str.length; k++){
+  //   if(str[k].length === average){
+  //     result.push(str[k])
+  //   }
+  // }
+  // return result

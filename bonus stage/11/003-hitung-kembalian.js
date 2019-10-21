@@ -12,6 +12,7 @@ diubah-ubah dan asumsi uang kembaliannya selalu cukup dengan jumlah ketersediaan
  
 */
 
+
 function hitungKembalian(bayar, harga){
   var sisa = bayar - harga;
   var rekUang = []

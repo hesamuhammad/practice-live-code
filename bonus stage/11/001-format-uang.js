@@ -28,17 +28,30 @@ output: Rp2.000,00
 
 
 function formatUang(number) {
-
-  var strNum = String(number);
-  var result = []
-  var str = ""
-  for(var i = 0; i < strNum.length; i++){
-    // console.log(strNum[i])
-    if(strNum.length % 3 === 0){
-      str += "." + strNum[i]
+  //code here
+  var result = "Rp"
+  var numStr = number.toString()
+  if (numStr.length < 4) {
+    return result += numStr += ",00"
+  }
+  for (let i = 0; i < numStr.length; i++) {
+    result += numStr[i]
+    if (numStr.length % 3 === 0) {
+      if ((i + 1) % 3 === 0) {
+        result += "."
+      }
+    } else if (i % 3 === 0) {
+      result += "."
     }
   }
-  console.log(str)
+  if (result[result.length - 1] === ".") {
+    var hapusBelakang = result.substring(0, result.length - 1)
+    hapusBelakang += ",00"
+    return hapusBelakang
+  } else {
+    result += ",00"
+    return result
+  }
 }
 
 console.log(formatUang(7500)); // Rp7.500,00
@@ -47,3 +60,30 @@ console.log(formatUang(100000)); // Rp100.000,00
 console.log(formatUang(1000000)); // Rp1.000.000,00
 console.log(formatUang(4999999)); // Rp4.999.999,00
 console.log(formatUang(13500)); // Rp4.999.999,00
+
+// function formatUang(number) {
+//   //code here
+//   var result = "Rp"
+//   var numStr = number.toString()
+//   if (numStr.length < 4) {
+//     return result += numStr += ",00"
+//   }
+//   for (let i = 0; i < numStr.length; i++) {
+//     result += numStr[i]
+//     if (numStr.length % 3 === 0) {
+//       if ((i + 1) % 3 === 0) {
+//         result += "."
+//       }
+//     } else if (i % 3 === 0) {
+//       result += "."
+//     }
+//   }
+//   if (result[result.length - 1] === ".") {
+//     var hapusBelakang = result.substring(0, result.length - 1)
+//     hapusBelakang += ",00"
+//     return hapusBelakang
+//   } else {
+//     result += ",00"
+//     return result
+//   }
+// }

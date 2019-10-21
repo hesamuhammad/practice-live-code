@@ -69,29 +69,8 @@ function getUglyNumber(num) {
   var result = [];
 
   for(var i = 1; i <= num; i++){
-    // console.log(i)
-    var number = i;
-
-    while(number%2 === 0){
-      number /= 2;
-      // result.push(i)
-      if(number === 1){
-        result.push(i);
-      }
-    }
-
-    while(number%3 === 0){
-      number /= 3;
-      if(number === 1){
-        result.push(i)
-      }
-    }
-
-    while(number%5 === 0){
-      number /= 5;
-      if(number === 1){
-        result.push(i)
-      }
+    if (i % 2 === 0|| i % 3 === 0 || i % 5 === 0){
+      result.push(i);
     }
   }
   // console.log(result);

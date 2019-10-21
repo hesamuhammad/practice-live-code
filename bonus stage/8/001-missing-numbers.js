@@ -35,28 +35,28 @@ console.log(missingNumbers([60, 54, 50])); // [51, 52, 53, 55, 56, 57, 58, 59]
 console.log(missingNumbers([])); // []
 
 
-// function missingNumbers (numbers) {
+function missingNumbers (numbers) {
 
-//   // console.log(numbers)
-//   var result = [];
-//   for(var i = numbers.length - 1; i >= 0; i--){
-//     for(var j = 1; j <= i; j++){
-//       if(numbers[j-1] > numbers[j]){
-//         var temp = numbers[j-1];
-//         numbers[j-1] = numbers[j];
-//         numbers[j] = temp
-//       }
-//     }
-//   }
+  // console.log(numbers)
+  var result = [];
+  for(var i = numbers.length - 1; i >= 0; i--){
+    for(var j = 1; j <= i; j++){
+      if(numbers[j-1] > numbers[j]){
+        var temp = numbers[j-1];
+        numbers[j-1] = numbers[j];
+        numbers[j] = temp
+      }
+    }
+  }
 
-//   var selisih = numbers[numbers.length - 1] - numbers[0];
-//   var result = [];
-//   // console.log(selisih)
-//   for(var k = 0; k < selisih; k++){
-//     if(numbers.indexOf(numbers[0]+k) === -1){
-//       // result.push(numbers[0]+k)
-//       console.log(numbers[0]+k)
-//     }
-//   }
-//   // return result
-// }
+  var selisih = numbers[numbers.length - 1] - numbers[0];
+  var result = [];
+  // console.log(selisih)
+  for(var k = 0; k < selisih; k++){
+    if(numbers.indexOf(numbers[0]+k) === -1){
+      // result.push(numbers[0]+k)
+      console.log(numbers[0]+k)
+    }
+  }
+  return result
+}
