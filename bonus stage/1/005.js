@@ -31,8 +31,12 @@ Standard kelulusan adalah minimum 70.
 
 function getReport(studentGrades) {
   // only code here..
-  
- 
+  var result = [
+    {classCode: '', passed: [], failed: []},
+    {classCode: '', passed: [], failed: []},
+    {classCode: '', passed: [], failed: []},
+  ]
+  return result;
 }
 
 

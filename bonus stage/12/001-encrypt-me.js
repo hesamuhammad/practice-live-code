@@ -34,7 +34,68 @@
 
 */
 
-function encrypt(input) {}
+function encrypt(input){
+  var kamus = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z'
+  ];
+  var H8BI = [
+    '!',
+    '@',
+    '#',
+    '$',
+    '%',
+    '^',
+    '&',
+    '*',
+    '(',
+    ')',
+    '-',
+    '+',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '0',
+    '[',
+    ']',
+    '{',
+    '}'
+  ];
+
+  for (var i = 0; i < input.length; i++){
+    if(input[i] === 'a') 
+  }
+}
 
 
 console.log(encrypt('dimitri')) // $(1(86(
@@ -42,6 +103,3 @@ console.log(encrypt('irsyah mardiah')) //(67{!* 1!6$(!*
 console.log(encrypt('dimitr€€')) // $(1(86€€
 console.log(encrypt('d!mas')) // $!1!7
 console.log(encrypt('@wtian')) // @[8(!2
-
-
-/

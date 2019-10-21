@@ -51,8 +51,51 @@ RULES
  - DILARANG MENGGUNAKAN BUILT-IN FUNCTION JS APAPUN SELAIN .push 
 
 */
-function numberPrimeCruncher(angka) {
 
+
+function primenumber(angka) {
+    var result = true;
+    if (angka < 2){
+        result = false
+    } 
+    for (var i = 2; i < angka; i++){
+        if (angka % i === 0){
+            result = false
+        }
+    }
+    return result
+}
+
+function numberPrimeCruncher(num){
+    var result = []
+    var after = []
+    var primeNum = []
+    for (var i = 0; i <= num; i++) {
+        var myPrime = primenumber(i)
+        if (myPrime === true){
+          primeNum.push(i);
+        }
+    }
+
+    // console.log('ini adalah primeNum ' + primeNum)
+    var total = 0
+    for (var j = 0; j < primeNum.length; j++){
+      total += primeNum[j];
+    }
+    // console.log('ini adalah total ' + total)
+    var avgPrime = total / primeNum.length;
+    // console.log('ini adalah avgPrime ' + avgPrime)
+
+    for (var k = 0; k < primeNum.length; k++){
+      if (primeNum[k] > avgPrime) result.push(primeNum[k])
+    }
+
+    if (num >= 2){
+      result.push(primeNum[k])
+    } else {
+      result = [];
+    }
+    return result
 }
 
 console.log(numberPrimeCruncher(10)); // [ 5, 7 ]
