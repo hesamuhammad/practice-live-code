@@ -27,8 +27,36 @@ RULES:
 */
 
 
+function angkaPrima(angka) {
+  let result = true;
+  if (angka < 2) {
+    result = false
+  }
+  for (let i = 2; i < angka; i++) {
+    if (angka % i === 0) {
+      result = false
+    }
+  }
+  return result
+}
+
 function arrayFilter (numbers, command) {
   //your code here
+  var result = []
+  for (var i = 0; i < numbers.length; i++){
+    if (command === 'ganjil'){
+      if (numbers[i] % 2 === 1) result.push(numbers[i])
+    } else if (command === 'genap'){
+      if (numbers[i] % 2 === 0) result.push(numbers[i])
+    } else if (command === 'kelipatan3'){
+      if (numbers[i] % 3 === 0) result.push(numbers[i]) 
+    } else if (command === 'kelipatan10'){
+      if (numbers[i] % 10 === 0) result.push(numbers[i])
+    } else if (command === 'prima'){
+      if (angkaPrima(numbers[i]) === true) result.push(numbers[i])
+    }
+  }
+  return result
 }
 
 console.log(arrayFilter([ 1, 2, 3, 4, 5, 6, 7, 8 ],  'ganjil')); // [ 1, 3, 5, 7 ]

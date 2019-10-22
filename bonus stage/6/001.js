@@ -31,6 +31,12 @@
 */
 function halangRintang(arena, dayaLompat) {
   // you can only write your code here!
+  var rintangan = 0;
+  for (var i = 0; i < arena.length; i++){
+    if (arena[i] === 'n') rintangan++;
+    if (arena[i] === '_') rintangan = 0;
+    if (rintangan > dayaLompat) return i - rintangan + 1
+  } 
 }
 
 // TEST CASES

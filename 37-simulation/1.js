@@ -88,12 +88,6 @@ function numberPrimeCruncher(num){
   for (var k = 0; k < primeNum.length; k++){
     if (primeNum[k] > avgPrime) result.push(primeNum[k])
   }
-
-  if (num >= 2){
-    result.push(primeNum[k])
-  } else {
-    result = [];
-  }
   return result
 }
 
