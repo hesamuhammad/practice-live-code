@@ -33,7 +33,7 @@ function miniSudokuBoard (text) {
     for (var i = 0; i < 3; i++){
         result.push([]);
         for (var j = 0; j < text.length; j++){
-            if(j % 3 === 0){
+            if (j % 3 === 0){
                 result[i].push(text[count]);
                 count++
             }

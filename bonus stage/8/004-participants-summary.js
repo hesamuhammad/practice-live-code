@@ -13,7 +13,27 @@ nama peserta dari negara tersebut
 Contoh ada di test cases
 */
 
-function participantsSummary (data) {}
+function participantsSummary (data) {
+  
+  if (!data.length){
+    return 'No participants'
+  } else {
+    var obj = {}
+    for (var i = 0; i < data.length; i++){
+      if (obj[data[i][1]] === undefined){
+        obj[data[i][1]] = {
+          total: 0,
+          names: []
+        }
+      }
+      if (data[i][1] === data [i][1]){
+        obj[data[i][1]].total++
+        obj[data[i][1]].names.push(data[i][0])
+      }
+    }
+    return obj
+  }
+}
 
 
 // Test cases

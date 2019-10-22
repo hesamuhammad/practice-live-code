@@ -33,7 +33,9 @@ function highestTopSpeed (data) {
         var max = 0
         for (var i = 0; i < newData.length; i++){
             var numbers = newData[i];
-            if(numbers > max) max = numbers;
+            if (numbers > max){
+                max = numbers;
+            }
         }
     }
     return max
