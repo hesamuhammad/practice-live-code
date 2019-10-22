@@ -14,19 +14,19 @@ NOTE: Tidak masalah jika 0 detik ditampilkan.
 
 function recursiveFormatDuration (seconds) {
     if (seconds < 60) {
-      return `${seconds} detik`
+      return seconds + ' detik'
     }
   
     if (seconds < 3600 && seconds >= 60) {
       let temp = Math.floor(seconds / 60)
       let rest = seconds % 60
-      return `${temp} menit ${recursiveFormatDuration(rest)}`
+      return temp +' menit ' + recursiveFormatDuration(rest);
     }
   
     if (seconds >= 3600) {
       let temp = Math.floor(seconds / 3600)
       let rest = seconds % 3600
-      return `${temp} jam ${recursiveFormatDuration(rest)}`
+      return temp + ' jam ' + recursiveFormatDuration(rest);
     }
   }
   

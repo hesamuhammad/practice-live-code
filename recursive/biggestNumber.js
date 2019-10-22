@@ -22,9 +22,6 @@ function angkaTerbesar(array) {
       return array[0]
     }
   
-    // return array[0] > angkaTerbesar(array.slice(1))
-    //   ? array[0]
-    //   : angkaTerbesar(array.slice(1))
     if (array[0] > angkaTerbesar(array.slice(1))) {
       return array[0]
     } else {
