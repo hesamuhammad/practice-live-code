@@ -48,10 +48,10 @@ function inventarisKeran (str) {
       }
     }
     // Check how many tap are OK and NOT OK
-    if (countNotOk === 0) return `Semua keran berjalan dengan baik`
-    if (countOk === 0) return `Semua keran rusak`
+    if (countNotOk === 0) return 'Semua keran berjalan dengan baik'
+    if (countOk === 0) return 'Semua keran rusak'
   
-    return `terdapat ${countOk} keran yang berjalan nomor(${arrOk}), dan ${countNotOk} keran rusak nomor(${arrNotOk})`
+    return 'terdapat ' + countOk + ' keran yang berjalan nomor(' + arrOk + ') , dan ' + countNotOk + ' keran rusak nomor(' + arrNotOk + ')'
   }
   
   console.log(inventarisKeran('XX^XX^XX^XX?XX^XX'))
