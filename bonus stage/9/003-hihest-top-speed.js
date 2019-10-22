@@ -26,8 +26,6 @@ Contoh input dan output bisa kamu lihat di test case
 */
 
 function highestTopSpeed (data) {
-    var str = data.split(',');
-
     if (data.length === 0){
         return 'No data'
     } else {
