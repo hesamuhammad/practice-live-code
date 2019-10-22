@@ -45,11 +45,11 @@ function findEmptySeat (arr, row) {
       }
   
       if (flag === false) {
-        return `Baris ${row} tidak tersedia`
+        return 'Baris ' + row + ' tidak tersedia'
       } else if (count === 0) {
-        return `Bangku di baris ${row} sudah penuh`
+        return 'Bangku di baris ' + row + ' sudah penuh'
       }
-      return `Terdapat ${count} bangku kosong, ${bangku}`
+      return 'Terdapat ' + count + ' bangku kosong, ' + bangku
     }
   }
   
