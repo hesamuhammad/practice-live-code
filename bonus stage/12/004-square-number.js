@@ -37,17 +37,17 @@ NOTE & RULES:
 
 function squareNumber(num) {
   var result = [];
-  var j = 1;
+  var count = 1;
   if (num < 3) return 'Minimal input adalah 3'
 
   for (let i = 0; i < num; i++) {
     result.push([]);
     while (result[i].length < num) {
       if (i % 2 == 0) {
-        result[i].push(j)
+        result[i].push(count)
       }
       else {
-        result[i].unshift(j)
+        result[i].unshift(count)
       }
       j++;
     }
@@ -59,7 +59,7 @@ function squareNumber(num) {
 console.log(squareNumber(3));
 // [ [ 1, 2, 3 ], [ 6, 5, 4 ], [ 7, 8, 9 ] ]
 
-console.log(squareNumber(4));
+console.log(squareNumber(4));   
 // [ [ 1, 2, 3, 4 ],
 //   [ 8, 7, 6, 5 ],
 //   [ 9, 10, 11, 12 ],

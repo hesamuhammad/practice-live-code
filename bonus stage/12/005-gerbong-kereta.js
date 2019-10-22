@@ -13,6 +13,15 @@ Contoh input dan output bisa dilihat di test case.
 
 function trainSeating (penumpang) {
 
+  var result = {}
+  for (var i = 0; i < penumpang.length; i++){
+    if (result[penumpang[i].gerbong] === undefined){
+        result[penumpang[i].gerbong] = [{nama: penumpang[i].nama, seat: penumpang[i].seat}]
+    } else {
+        result[penumpang[i].gerbong].push({nama: penumpang[i].nama, seat: penumpang[i].seat})
+    }
+  }
+  return result;
 }
 
 
