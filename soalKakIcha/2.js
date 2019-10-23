@@ -22,7 +22,7 @@ function game(array) {
     // for (var key in objGame) {
     for (var k = 0; k < array.length; k++) {
         for (var j = 0; j < objGame['codeGame'].length; j++) {
-            if (output[objGame.genre[j]] === undefined) {
+            if (output[objGame['genre'][j]] === undefined) {
                 output[objGame['genre'][j]] = {
                     title: [],
                     total: 0
